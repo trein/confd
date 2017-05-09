@@ -34,7 +34,7 @@ curl -X PUT -d 'db.example.com' http://localhost:8500/v1/kv/myapp/database/url
 curl -X PUT -d 'rob' http://localhost:8500/v1/kv/myapp/database/user
 ```
 
-####vault
+#### vault
 ```
 vault mount -path myapp generic
 vault write myapp/database url=db.example.com user=rob
@@ -84,6 +84,7 @@ aws dynamodb put-item --table-name <YOUR_TABLE> --region <YOUR_REGION> \
     --item '{ "key": { "S": "/myapp/database/user" }, "value": {"S": "rob"}}'
 ```
 #### StackEngine
+
 ```
 curl -k -X PUT -d 'value' https://mesh-01:8443/api/kv/key --header "Authorization: Bearer stackengine_api_key"
 ```
